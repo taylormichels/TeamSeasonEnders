@@ -24,6 +24,7 @@ namespace TeamSeasonEnders.Models
         public string City { get; set; }
         public string State { get; set; }
         public string Division { get; set; }
+        public string Conference { get; set; }
     
         public virtual ICollection<PlayoffResult> PlayoffResults { get; set; }
     }

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Teams">
       <EntityTypeMapping TypeName="TeamSeasonEndersModel.Team">
         <MappingFragment StoreEntitySet="Team">
+          <ScalarProperty Name="Conference" ColumnName="Conference" />
           <ScalarProperty Name="Division" ColumnName="Division" />
           <ScalarProperty Name="State" ColumnName="State" />
           <ScalarProperty Name="City" ColumnName="City" />

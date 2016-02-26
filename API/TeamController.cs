@@ -44,13 +44,14 @@ namespace TeamSeasonEnders.API
                 //var x = context.Teams.Where(t => t.Division == division).ToList();
                 //return x;
 
-                var x = context.Teams.Where(t => t.Division == division)
+                var x = context.Teams.Where(t => t.Conference == division)
                     .Select(r => new TeamModel
                     {
                         Name = r.Name,
                         City = r.City,
                         State = r.State,
-                        Division = r.Division
+                        Division = r.Division,
+                        Conference = r.Conference
                     });
 
                 return x.ToList();
@@ -68,6 +69,7 @@ namespace TeamSeasonEnders.API
             public string City { get; set; }
             public string State { get; set; }
             public string Division { get; set; }
+            public string Conference { get; set; }
         }
     }
 }
