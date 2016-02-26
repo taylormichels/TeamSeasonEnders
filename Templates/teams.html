@@ -1,0 +1,10 @@
+﻿<div ng-controller="TeamController">
+    <select ng-options="option for option in divisions"
+            ng-model="division"
+            ng-change="update();" class="form-control"></select>    
+    <ul>
+        <li ng-repeat="team in teams">
+            <span> {{ team.Name }}</span>
+        </li>
+    </ul>
+</div>

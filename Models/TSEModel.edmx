@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TeamSeasonEndersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PlayoffResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamId" Type="int" Nullable="false" />
+          <Property Name="OpponentId" Type="int" Nullable="false" />
+          <Property Name="Round" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="GameCount" Type="int" />
+          <Property Name="GamesWon" Type="int" />
+          <Property Name="GamesLost" Type="int" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="Division" Type="varchar" MaxLength="50" />
+          <Property Name="Conference" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PlayoffResult_Team">
+          <End Role="Team" Type="Self.Team" Multiplicity="1" />
+          <End Role="PlayoffResult" Type="Self.PlayoffResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlayoffResult">
+              <PropertyRef Name="TeamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TeamSeasonEndersModelStoreContainer">
+          <EntitySet Name="PlayoffResult" EntityType="Self.PlayoffResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PlayoffResult_Team" Association="Self.FK_PlayoffResult_Team">
+            <End Role="Team" EntitySet="Team" />
+            <End Role="PlayoffResult" EntitySet="PlayoffResult" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TeamSeasonEndersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TeamSeasonEndersEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Teams" EntityType="TeamSeasonEndersModel.Team" />
+          <EntitySet Name="PlayoffResults" EntityType="TeamSeasonEndersModel.PlayoffResult" />
+          <AssociationSet Name="FK_PlayoffResult_Team" Association="TeamSeasonEndersModel.FK_PlayoffResult_Team">
+            <End Role="Team" EntitySet="Teams" />
+            <End Role="PlayoffResult" EntitySet="PlayoffResults" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PlayoffResults" Relationship="TeamSeasonEndersModel.FK_PlayoffResult_Team" FromRole="Team" ToRole="PlayoffResult" />
+          <Property Name="Conference" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PlayoffResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamId" Type="Int32" Nullable="false" />
+          <Property Name="OpponentId" Type="Int32" Nullable="false" />
+          <Property Name="Round" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="GameCount" Type="Int32" />
+          <Property Name="GamesWon" Type="Int32" />
+          <Property Name="GamesLost" Type="Int32" />
+          <NavigationProperty Name="Team" Relationship="TeamSeasonEndersModel.FK_PlayoffResult_Team" FromRole="PlayoffResult" ToRole="Team" />
+        </EntityType>
+        <Association Name="FK_PlayoffResult_Team">
+          <End Type="TeamSeasonEndersModel.Team" Role="Team" Multiplicity="1" />
+          <End Type="TeamSeasonEndersModel.PlayoffResult" Role="PlayoffResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlayoffResult">
+              <PropertyRef Name="TeamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TeamSeasonEndersModelStoreContainer" CdmEntityContainer="TeamSeasonEndersEntities">
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="TeamSeasonEndersModel.Team">
+              <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="Conference" ColumnName="Conference" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayoffResults">
+            <EntityTypeMapping TypeName="TeamSeasonEndersModel.PlayoffResult">
+              <MappingFragment StoreEntitySet="PlayoffResult">
+                <ScalarProperty Name="GamesLost" ColumnName="GamesLost" />
+                <ScalarProperty Name="GamesWon" ColumnName="GamesWon" />
+                <ScalarProperty Name="GameCount" ColumnName="GameCount" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Round" ColumnName="Round" />
+                <ScalarProperty Name="OpponentId" ColumnName="OpponentId" />
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

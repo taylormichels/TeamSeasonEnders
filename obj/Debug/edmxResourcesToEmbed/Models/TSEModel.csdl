@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TeamSeasonEndersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TeamSeasonEndersEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Teams" EntityType="TeamSeasonEndersModel.Team" />
+    <EntitySet Name="PlayoffResults" EntityType="TeamSeasonEndersModel.PlayoffResult" />
+    <AssociationSet Name="FK_PlayoffResult_Team" Association="TeamSeasonEndersModel.FK_PlayoffResult_Team">
+      <End Role="Team" EntitySet="Teams" />
+      <End Role="PlayoffResult" EntitySet="PlayoffResults" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PlayoffResults" Relationship="TeamSeasonEndersModel.FK_PlayoffResult_Team" FromRole="Team" ToRole="PlayoffResult" />
+  </EntityType>
+  <EntityType Name="PlayoffResult">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamId" Type="Int32" Nullable="false" />
+    <Property Name="OpponentId" Type="Int32" Nullable="false" />
+    <Property Name="Round" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="GameCount" Type="Int32" />
+    <Property Name="GamesWon" Type="Int32" />
+    <Property Name="GamesLost" Type="Int32" />
+    <NavigationProperty Name="Team" Relationship="TeamSeasonEndersModel.FK_PlayoffResult_Team" FromRole="PlayoffResult" ToRole="Team" />
+  </EntityType>
+  <Association Name="FK_PlayoffResult_Team">
+    <End Type="TeamSeasonEndersModel.Team" Role="Team" Multiplicity="1" />
+    <End Type="TeamSeasonEndersModel.PlayoffResult" Role="PlayoffResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlayoffResult">
+        <PropertyRef Name="TeamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

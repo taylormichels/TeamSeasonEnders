@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TeamSeasonEndersModelStoreContainer" CdmEntityContainer="TeamSeasonEndersEntities">
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="TeamSeasonEndersModel.Team">
+        <MappingFragment StoreEntitySet="Team">
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayoffResults">
+      <EntityTypeMapping TypeName="TeamSeasonEndersModel.PlayoffResult">
+        <MappingFragment StoreEntitySet="PlayoffResult">
+          <ScalarProperty Name="GamesLost" ColumnName="GamesLost" />
+          <ScalarProperty Name="GamesWon" ColumnName="GamesWon" />
+          <ScalarProperty Name="GameCount" ColumnName="GameCount" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Round" ColumnName="Round" />
+          <ScalarProperty Name="OpponentId" ColumnName="OpponentId" />
+          <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
