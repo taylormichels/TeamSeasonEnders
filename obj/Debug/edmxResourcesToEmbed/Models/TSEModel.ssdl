@@ -10,8 +10,8 @@
     <Property Name="Round" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Year" Type="int" Nullable="false" />
     <Property Name="GameCount" Type="int" />
-    <Property Name="GamesWon" Type="int" />
-    <Property Name="GamesLost" Type="int" />
+    <Property Name="GamesWon" Type="int" Nullable="false" />
+    <Property Name="GamesLost" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Team">
     <Key>
@@ -24,6 +24,18 @@
     <Property Name="Division" Type="varchar" MaxLength="50" />
     <Property Name="Conference" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <Association Name="FK_PlayoffResult_Opponent">
+    <End Role="Team" Type="Self.Team" Multiplicity="1" />
+    <End Role="PlayoffResult" Type="Self.PlayoffResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlayoffResult">
+        <PropertyRef Name="OpponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_PlayoffResult_Team">
     <End Role="Team" Type="Self.Team" Multiplicity="1" />
     <End Role="PlayoffResult" Type="Self.PlayoffResult" Multiplicity="*" />
@@ -39,6 +51,10 @@
   <EntityContainer Name="TeamSeasonEndersModelStoreContainer">
     <EntitySet Name="PlayoffResult" EntityType="Self.PlayoffResult" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PlayoffResult_Opponent" Association="Self.FK_PlayoffResult_Opponent">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="PlayoffResult" EntitySet="PlayoffResult" />
+    </AssociationSet>
     <AssociationSet Name="FK_PlayoffResult_Team" Association="Self.FK_PlayoffResult_Team">
       <End Role="Team" EntitySet="Team" />
       <End Role="PlayoffResult" EntitySet="PlayoffResult" />

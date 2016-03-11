@@ -5,6 +5,11 @@
               return http.get('/api/team/getteams', {
                   params: { division: data }
               });
-          }         
+          },
+          getResults: function (team, rival) {
+              return http.get('/api/team/getresults', {
+                  params: { team: team, rival: rival }
+              });
+          }
       };
 }]);

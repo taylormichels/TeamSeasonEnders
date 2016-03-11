@@ -17,6 +17,7 @@ namespace TeamSeasonEnders.Models
         public Team()
         {
             this.PlayoffResults = new HashSet<PlayoffResult>();
+            this.PlayoffResults1 = new HashSet<PlayoffResult>();
         }
     
         public int Id { get; set; }
@@ -27,5 +28,6 @@ namespace TeamSeasonEnders.Models
         public string Conference { get; set; }
     
         public virtual ICollection<PlayoffResult> PlayoffResults { get; set; }
+        public virtual ICollection<PlayoffResult> PlayoffResults1 { get; set; }
     }
 }

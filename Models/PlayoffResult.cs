@@ -20,9 +20,10 @@ namespace TeamSeasonEnders.Models
         public string Round { get; set; }
         public int Year { get; set; }
         public Nullable<int> GameCount { get; set; }
-        public Nullable<int> GamesWon { get; set; }
-        public Nullable<int> GamesLost { get; set; }
+        public int GamesWon { get; set; }
+        public int GamesLost { get; set; }
     
         public virtual Team Team { get; set; }
+        public virtual Team Rival { get; set; }
     }
 }
