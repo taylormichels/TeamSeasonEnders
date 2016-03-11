@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="TeamSeasonEndersModel.Team" Width="1.5" PointX="0.75" PointY="0.875" />
         <EntityTypeShape EntityType="TeamSeasonEndersModel.PlayoffResult" Width="1.5" PointX="3" PointY="0.875" />
         <AssociationConnector Association="TeamSeasonEndersModel.FK_PlayoffResult_Team" />
+        <AssociationConnector Association="TeamSeasonEndersModel.FK_PlayoffResult_Opponent" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
