@@ -5,7 +5,6 @@
               return http.get('/api/team/getteams', {
                   params: { division: data }
               });
-          }//,
-         // getUsers: http.get('/api/team/users')
+          }         
       };
 }]);
