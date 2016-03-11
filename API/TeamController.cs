@@ -70,6 +70,13 @@ namespace TeamSeasonEnders.API
             public int Year { get; set; }
             public int GamesWon { get; set; }
             public int GamesLost { get; set; }
+            public bool Win
+            {
+                get
+                {
+                    return GamesWon > GamesLost;
+                }
+            }
         }
     }
 }

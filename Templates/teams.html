@@ -2,9 +2,12 @@
     <select ng-options="option.Id as option.Name for option in teams"
             ng-model="rival"
             ng-change="update();" class="form-control"></select>    
-    <ul>
-        <li ng-repeat="result in results">
-            <span> {{ result.Name }} : {{ result.GamesWon }} {{ result.Year }}</span>
+    <ul class="list-group" style="margin-bottom:0">
+        <li ng-repeat="result in results" class="list-group-item"
+            ng-class="{win: result.Win, loss: !result.Win}">
+            <span> {{ result.Year }} :
+             {{ result.Win ? 'W' : 'L'}}
+             {{ result.GamesWon }} - {{ result.GamesLost}}</span>
         </li>
     </ul>
 </div>
