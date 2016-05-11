@@ -219,6 +219,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\RangersLogo.png" />
     <Content Include="Index.html" />
+    <Content Include="Models\teamseasonenders.sql" />
     <Content Include="Scripts\Common\angular-animate.min.js.map" />
     <Content Include="Scripts\Common\angular-aria.min.js.map" />
     <Content Include="Scripts\Common\angular-cookies.min.js.map" />
