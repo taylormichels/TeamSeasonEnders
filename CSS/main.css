@@ -13,6 +13,7 @@
 
 .loss {
     background-color: #F3E9E9;
+    color: red;
 }
 
 select.form-control {
@@ -36,4 +37,5 @@ select option {
 .year {
     font-size: 18px;
     font-weight: bold;
+    color: #000;
 }
