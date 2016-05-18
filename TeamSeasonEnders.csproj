@@ -215,6 +215,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\main.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\RangersLogo.png" />
@@ -1036,6 +1037,7 @@
     <Content Include="Scripts\TSE\controllers.js" />
     <Content Include="Scripts\TSE\factories.js" />
     <Content Include="Scripts\Common\_references.js" />
+    <Content Include="Scripts\TSE\filters.js" />
     <Content Include="Templates\teams.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

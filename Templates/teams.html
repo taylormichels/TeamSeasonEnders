@@ -1,13 +1,18 @@
-﻿<div ng-controller="TeamController">
+﻿<div ng-controller="TeamController" class="form-group">
     <select ng-options="option.Id as option.Name for option in teams"
-            ng-model="rival"
+            ng-model="rival.Id"
             ng-change="update();" class="form-control"></select>    
     <ul class="list-group" style="margin-bottom:0">
         <li ng-repeat="result in results" class="list-group-item"
             ng-class="{win: result.Win, loss: !result.Win}">
-            <span> {{ result.Year }} :
-             {{ result.Win ? 'W' : 'L'}}
-             {{ result.GamesWon }} - {{ result.GamesLost}}</span>
+            <div><span class="year">{{ result.Year }}</span>:
+                <span class="final">
+                    {{ result.Win ? 'W' : 'L'}}
+                    {{ result.GamesWon }} - {{ result.GamesLost}}
+                </span>
+             <img style="height:50px" 
+                  ng-src="{{ (result.Win ? 'Rangers' : result.Name) | logoFormatter }}" />
+            </div>
         </li>
     </ul>
 </div>
