@@ -32,3 +32,34 @@ C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSea
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\obj\Debug\TeamSeasonEnders.csprojResolveAssemblyReference.cache
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\obj\Debug\TeamSeasonEnders.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\obj\Debug\TeamSeasonEnders.pdb
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\obj\Debug\TeamSeasonEnders.csprojResolveAssemblyReference.cache
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\TeamSeasonEnders.dll.config
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\TeamSeasonEnders.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\TeamSeasonEnders.pdb
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\Antlr3.Runtime.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\EntityFramework.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\EntityFramework.SqlServer.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\Newtonsoft.Json.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.Helpers.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.Mvc.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.Optimization.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.Razor.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.WebPages.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.WebPages.Razor.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\WebGrease.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\Antlr3.Runtime.pdb
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\EntityFramework.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\EntityFramework.SqlServer.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\Newtonsoft.Json.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.Helpers.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.Mvc.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.Optimization.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.Razor.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.WebPages.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.WebPages.Razor.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\obj\Debug\TeamSeasonEnders.dll
+C:\Users\Taylor\Documents\Development\TeamSeasonEnders\obj\Debug\TeamSeasonEnders.pdb
