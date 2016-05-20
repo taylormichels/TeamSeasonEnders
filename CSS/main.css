@@ -7,14 +7,15 @@
     margin: 0 auto;
 }
 
-.win {
+.win.final {
     font-weight: bold;
 }
 
 .loss {
-    background-color: #F3E9E9;
-    color: red;
+    background-color: #F3E9E9;    
 }
+
+.loss .final { color: red; }
 
 select.form-control {
     height: 45px;
@@ -38,4 +39,14 @@ select option {
     font-size: 18px;
     font-weight: bold;
     color: #000;
+}
+
+.roundTitle {
+    padding-left:20px;
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-break {
+        display: none;
+    }
 }

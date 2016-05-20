@@ -17,7 +17,7 @@ namespace TeamSeasonEnders.Models
         public int Id { get; set; }
         public int TeamId { get; set; }
         public int OpponentId { get; set; }
-        public string Round { get; set; }
+        public int Round { get; set; }
         public int Year { get; set; }
         public Nullable<int> GameCount { get; set; }
         public int GamesWon { get; set; }

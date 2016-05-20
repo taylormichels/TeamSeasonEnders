@@ -66,7 +66,7 @@ namespace TeamSeasonEnders.API
         public class ResultModel
         {
             public string Name { get; set; }
-            public string Round { get; set; }
+            public int Round { get; set; }
             public int Year { get; set; }
             public int GamesWon { get; set; }
             public int GamesLost { get; set; }
@@ -75,6 +75,26 @@ namespace TeamSeasonEnders.API
                 get
                 {
                     return GamesWon > GamesLost;
+                }
+            }
+
+            public string RoundTitle
+            {
+                get
+                {
+                    switch (Round)
+                    {
+                        case 1:
+                            return "First Round";
+                        case 2:
+                            return "Second Round";
+                        case 3:
+                            return "Conference Finals";
+                        case 4:
+                            return "Stanyley Cup Final";
+                        default:
+                            return "N/A";
+                    }
                 }
             }
         }

@@ -12,6 +12,8 @@
                 </span>
              <img style="height:50px" 
                   ng-src="{{ (result.Win ? 'Rangers' : result.Name) | logoFormatter }}" />
+            <span class="roundTitle">{{ result.RoundTitle | mobileBreak }}</span>
+            <!--<span class="roundTitle" ng-bind-html="result.RoundTitle | mobilebreak"></span>-->
             </div>
         </li>
     </ul>

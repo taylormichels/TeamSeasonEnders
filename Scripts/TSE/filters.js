@@ -14,4 +14,9 @@
          }         
          return result;
      }
- });
+ }).filter('mobileBreak', ['$sce', function ($sce) {
+     return function (text) {
+         var result = text.replace(' ', ' <br class="mobile-break" />');
+         return $sce.trustAsHtml(result);
+     }
+ }]);

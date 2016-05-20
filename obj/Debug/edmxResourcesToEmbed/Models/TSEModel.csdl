@@ -32,7 +32,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TeamId" Type="Int32" Nullable="false" />
     <Property Name="OpponentId" Type="Int32" Nullable="false" />
-    <Property Name="Round" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Round" Type="Int32" Nullable="false" />
     <Property Name="Year" Type="Int32" Nullable="false" />
     <Property Name="GameCount" Type="Int32" />
     <Property Name="GamesWon" Type="Int32" Nullable="false" />

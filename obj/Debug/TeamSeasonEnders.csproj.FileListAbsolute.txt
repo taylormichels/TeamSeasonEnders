@@ -5,14 +5,12 @@ C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSea
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\EntityFramework.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\EntityFramework.SqlServer.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\Newtonsoft.Json.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Net.Http.Formatting.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.Http.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.Http.WebHost.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.Mvc.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.Optimization.dll
-C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.Providers.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.Razor.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.WebPages.Deployment.dll
 C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.WebPages.dll
@@ -63,3 +61,7 @@ C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\System.Web.WebPages.R
 C:\Users\Taylor\Documents\Development\TeamSeasonEnders\bin\Microsoft.Web.Infrastructure.xml
 C:\Users\Taylor\Documents\Development\TeamSeasonEnders\obj\Debug\TeamSeasonEnders.dll
 C:\Users\Taylor\Documents\Development\TeamSeasonEnders\obj\Debug\TeamSeasonEnders.pdb
+C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.Helpers.dll
+C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\Antlr3.Runtime.pdb
+C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.Helpers.xml
+C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\bin\System.Web.Optimization.xml
