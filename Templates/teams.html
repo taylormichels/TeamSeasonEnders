@@ -1,20 +1,28 @@
-﻿<div ng-controller="TeamController" class="form-group">
-    <select ng-options="option.Id as option.Name for option in teams"
-            ng-model="rival.Id"
-            ng-change="update();" class="form-control"></select>    
-    <ul class="list-group" style="margin-bottom:0">
-        <li ng-repeat="result in results" class="list-group-item"
-            ng-class="{win: result.Win, loss: !result.Win}">
-            <div><span class="year">{{ result.Year }}</span>:
-                <span class="final">
-                    {{ result.Win ? 'W' : 'L'}}
-                    {{ result.GamesWon }} - {{ result.GamesLost}}
-                </span>
-             <img class="logo"
-                  ng-src="{{ (result.Win ? 'Rangers' : result.Name) | logoFormatter }}" />
-            <!--<span class="roundTitle">{{ result.RoundTitle | mobileBreak }}</span>-->
-            <span class="roundTitle" ng-bind-html="result.RoundTitle | mobileBreak"></span>
-            </div>
-        </li>
-    </ul>
+﻿
+<div class="row">
+    <img class="img-responsive" ng-src="{{ 'Rangers' | logoFormatter }}"
+         style="width: 30%; margin:0 auto; padding: 15px" />
+</div>
+<div class="row bg-white">
+    <div ng-controller="TeamController" class="form-group">
+        <select ng-options="option.Id as option.Name for option in teams"
+                ng-model="rival.Id"
+                ng-change="update();" class="form-control"></select>
+        <ul class="list-group" style="margin-bottom:0">
+            <li ng-repeat="result in results" class="list-group-item"
+                ng-class="{win: result.Win, loss: !result.Win}">
+                <div>
+                    <span class="year">{{ result.Year }}</span>:
+                    <span class="final">
+                        {{ result.Win ? 'W' : 'L'}}
+                        {{ result.GamesWon }} - {{ result.GamesLost}}
+                    </span>
+                    <img class="logo"
+                         ng-src="{{ (result.Win ? 'Rangers' : result.Name) | logoFormatter }}" />
+                    <!--<span class="roundTitle">{{ result.RoundTitle | mobileBreak }}</span>-->
+                    <span class="roundTitle" ng-bind-html="result.RoundTitle | mobileBreak"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
