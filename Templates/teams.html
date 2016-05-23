@@ -10,10 +10,10 @@
                     {{ result.Win ? 'W' : 'L'}}
                     {{ result.GamesWon }} - {{ result.GamesLost}}
                 </span>
-             <img style="height:50px" 
+             <img class="logo"
                   ng-src="{{ (result.Win ? 'Rangers' : result.Name) | logoFormatter }}" />
-            <span class="roundTitle">{{ result.RoundTitle | mobileBreak }}</span>
-            <!--<span class="roundTitle" ng-bind-html="result.RoundTitle | mobilebreak"></span>-->
+            <!--<span class="roundTitle">{{ result.RoundTitle | mobileBreak }}</span>-->
+            <span class="roundTitle" ng-bind-html="result.RoundTitle | mobileBreak"></span>
             </div>
         </li>
     </ul>

@@ -43,10 +43,26 @@ select option {
 
 .roundTitle {
     padding-left:20px;
+    display: inline-block;
 }
+
+.logo { height: 50px; }
 
 @media screen and (min-width: 768px) {
     .mobile-break {
         display: none;
     }
+}
+
+/*@media screen 
+and (device-width: 320px) {
+    .logo { height: 40px; }
+    .roundTitle { padding-left:10px; }
+}*/
+
+
+@media screen 
+and (max-width: 340px) {
+    .logo { height: 40px; }
+    .roundTitle { padding-left:10px; }
 }
