@@ -215,6 +215,11 @@
     <Content Include="Images\RangersLogo.png" />
     <Content Include="Index.html" />
     <Content Include="Models\teamseasonenders.sql" />
+    <Content Include="Scripts\canvg\canvg.js" />
+    <Content Include="Scripts\canvg\canvg.min.js" />
+    <Content Include="Scripts\canvg\jquery.adaptive-backgrounds.js" />
+    <Content Include="Scripts\canvg\rgbcolor.js" />
+    <Content Include="Scripts\canvg\StackBlur.js" />
     <Content Include="Scripts\Common\angular-animate.min.js.map" />
     <Content Include="Scripts\Common\angular-aria.min.js.map" />
     <Content Include="Scripts\Common\angular-cookies.min.js.map" />

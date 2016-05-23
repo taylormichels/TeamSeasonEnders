@@ -7,7 +7,12 @@
     <script src="/Scripts/Common/angular-route.js"></script>
     <script src="/Scripts/TSE/controllers.js"></script>
     <script src="/Scripts/TSE/factories.js"></script>
-    <script src="/Scripts/TSE/filters.js"></script>
+    <script src="/Scripts/TSE/filters.js"></script>    
+    <script src="/Scripts/canvg/rgbcolor.js"></script>
+    <script src="/Scripts/canvg/StackBlur.js"></script>
+    <script src="/Scripts/canvg/canvg.js"></script>    
+    <script src="/Scripts/Common/jquery-1.8.2.min.js"></script>
+    <script src="/Scripts/canvg/jquery.adaptive-backgrounds.js"></script>
     <link type="text/css" rel="stylesheet" href="/CSS/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="/CSS/main.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,4 +40,16 @@
     </div>    
 </body>
 </html>
-
+<script type="text/javascript">
+    // this sets background color to prominent color in logo
+    // todo: maybe make this a service or better implement
+    setTimeout(function (event) {
+        canvg(document.getElementById('canLogo'),
+                document.getElementById('topLogo').src);
+        var canvas = document.getElementById('canLogo');
+        var image = document.getElementById('tempLogo');
+        image.src = canvas.toDataURL("image/png");
+        var defaults = { parent: 'body' };
+        $.adaptiveBackground.run(defaults);
+    }, 100);
+</script>

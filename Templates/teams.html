@@ -1,7 +1,9 @@
 ﻿
 <div class="row">
-    <img class="img-responsive" ng-src="{{ 'Rangers' | logoFormatter }}"
+    <img class="img-responsive" id="topLogo" ng-src="{{ 'Rangers' | logoFormatter }}"
          style="width: 30%; margin:0 auto; padding: 15px" />
+    <canvas id="canLogo" style="height:50px; display:none"></canvas>
+    <img id="tempLogo" style="display:none" data-adaptive-background />
 </div>
 <div class="row bg-white">
     <div ng-controller="TeamController" class="form-group">
@@ -18,7 +20,7 @@
                         {{ result.GamesWon }} - {{ result.GamesLost}}
                     </span>
                     <img class="logo"
-                         ng-src="{{ (result.Win ? 'Rangers' : result.Name) | logoFormatter }}" />
+                         ng-src="{{ (result.Win ? 'Rangers' : result.Name) | logoFormatter }}" />                    
                     <!--<span class="roundTitle">{{ result.RoundTitle | mobileBreak }}</span>-->
                     <span class="roundTitle" ng-bind-html="result.RoundTitle | mobileBreak"></span>
                 </div>
