@@ -15,6 +15,8 @@
     <script src="/Scripts/canvg/jquery.adaptive-backgrounds.js"></script>
     <link type="text/css" rel="stylesheet" href="/CSS/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="/CSS/main.css" />
+    <link type="text/css" rel="stylesheet" href="/CSS/menu.css" />
+    <link type="text/css" rel="stylesheet" href="/CSS/font-awesome.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
         var app = angular.module('tseApp', [
@@ -35,8 +37,29 @@
 </script>
 </head>
 <body>
-    <div class="container">        
-        <section ng-view ></section>        
+    <div id="tse-container">    
+        <div id="tse-canvas">
+            <div id="tse-navbar">
+                <a class="toggle-nav">
+                    <i class="fa fa-bars"></i>
+                    <span class="app-title">
+                        NHL Playoff Rivalries
+                    </span>
+                </a>
+                <div id="tse-menu">
+                    <ul>
+                        <li><a>Foobar</a></li>
+                        <li><a>Some Other</a></li>
+                        <li class="app-title-desktop">
+                            NHL Playoff Rivalries
+                        </li>
+                    </ul>
+                </div>
+            </div>   
+            
+            <br />
+            <section ng-view></section>        
+        </div>         
     </div>    
 </body>
 </html>
@@ -52,4 +75,25 @@
         var defaults = { parent: 'body' };
         $.adaptiveBackground.run(defaults);
     }, 100);
+
+    /*========================================
+    /            Menu logic            
+    ========================================*/
+        $(function () {
+            // Toggle Nav on Click
+            $('.toggle-nav').click(function () {
+                // Calling a function in case you want to expand upon this.
+                toggleNav();
+            });
+        });
+
+        function toggleNav() {
+            if ($('#tse-container').hasClass('show-nav')) {
+                // Do things on Nav Close
+                $('#tse-container').removeClass('show-nav');
+            } else {
+                // Do things on Nav Open
+                $('#tse-container').addClass('show-nav');
+            }
+        }
 </script>
