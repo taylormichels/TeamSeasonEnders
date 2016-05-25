@@ -29,6 +29,9 @@
             $routeProvider.when('/', {
                 templateUrl: '/templates/teams.html',
                 controller: 'TeamController'
+            }).when('/chooser', {
+                templateUrl: '/templates/chooser.html'//,
+                //controller: 'TeamController'
             })
             .otherwise({
                 redirectTo: '/'
@@ -48,8 +51,8 @@
                 </a>
                 <div id="tse-menu">
                     <ul>
-                        <li><a>Foobar</a></li>
-                        <li><a>Some Other</a></li>
+                        <li><a href="#chooser">Choose Team</a></li>
+                        <li><a href="#/">View</a></li>
                         <li class="app-title-desktop">
                             NHL Playoff Rivalries
                         </li>
@@ -64,35 +67,19 @@
 </body>
 </html>
 <script type="text/javascript">
-    // this sets background color to prominent color in logo
-    // todo: maybe make this a service or better implement
-    setTimeout(function (event) {
-        canvg(document.getElementById('canLogo'),
-                document.getElementById('topLogo').src);
-        var canvas = document.getElementById('canLogo');
-        var image = document.getElementById('tempLogo');
-        image.src = canvas.toDataURL("image/png");
-        var defaults = { parent: 'body' };
-        $.adaptiveBackground.run(defaults);
-    }, 100);
-
     /*========================================
     /            Menu logic            
     ========================================*/
         $(function () {
-            // Toggle Nav on Click
-            $('.toggle-nav').click(function () {
-                // Calling a function in case you want to expand upon this.
+            $('.toggle-nav').click(function () {                
                 toggleNav();
             });
         });
 
         function toggleNav() {
             if ($('#tse-container').hasClass('show-nav')) {
-                // Do things on Nav Close
                 $('#tse-container').removeClass('show-nav');
             } else {
-                // Do things on Nav Open
                 $('#tse-container').addClass('show-nav');
             }
         }

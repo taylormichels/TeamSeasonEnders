@@ -1,5 +1,5 @@
 ﻿angular.module('controllers.team', [])
-  .controller('TeamController', ['$scope', 'dataFactory', '$timeout', function (scope, data, $timeout) {
+  .controller('TeamController', ['$scope', 'dataFactory', 'colorService', function (scope, data, color) {
       scope.teams = [];
       //scope.divisions = ['Eastern', 'Western'];
       scope.division = 'Eastern'; // TODO get from favorite team
@@ -12,6 +12,7 @@
               scope.teams = result;
               scope.teams.unshift(scope.default);
               scope.rival = scope.teams[0];
+              color.setBackgroundColor();
           });
       };
 

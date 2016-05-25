@@ -12,4 +12,19 @@
               });
           }
       };
-}]);
+  }]).factory('colorService', function () {
+      return {          
+          setBackgroundColor: function () {
+              // convert svg logo to canvas then to tempLogo for bgcolor plugin
+              canvg(document.getElementById('canLogo'),
+                document.getElementById('topLogo').src);
+              var canvas = document.getElementById('canLogo');
+              var image = document.getElementById('tempLogo');
+              image.src = canvas.toDataURL("image/png");
+              
+              // this sets background color to prominent color in logo
+              var defaults = { parent: 'body' };
+              $.adaptiveBackground.run(defaults);
+          }
+      };      
+  });

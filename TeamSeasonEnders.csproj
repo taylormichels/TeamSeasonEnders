@@ -2070,6 +2070,7 @@
     <Content Include="Scripts\TSE\factories.js" />
     <Content Include="Scripts\Common\_references.js" />
     <Content Include="Scripts\TSE\filters.js" />
+    <Content Include="Templates\chooser.html" />
     <Content Include="Templates\teams.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
