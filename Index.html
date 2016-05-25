@@ -83,4 +83,12 @@
                 $('#tse-container').addClass('show-nav');
             }
         }
+
+        $('body').click(function (e) {
+            if ($('#tse-container').hasClass('show-nav')) {
+                if (!$($(e)[0].srcElement).hasClass('fa-bars')) {
+                    $('#tse-container').removeClass('show-nav');
+                }
+            }                                   
+        });
 </script>
