@@ -7,7 +7,7 @@
 </div>
 <div class="row bg-white">
     <div ng-controller="TeamController" class="form-group">
-        <select ng-options="option.Id as option.Name for option in teams"
+        <select ng-options="option.Id as option.Name group by option.Division for option in teams"
                 ng-model="rival.Id"
                 ng-change="update();" class="form-control"></select>
         <ul class="list-group" style="margin-bottom:0">
