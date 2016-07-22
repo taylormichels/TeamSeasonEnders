@@ -1170,6 +1170,7 @@
     <Content Include="Scripts\Common\angular-sanitize.min.js.map" />
     <Content Include="Scripts\Common\angular-touch.min.js.map" />
     <Content Include="Scripts\Common\angular.min.js.map" />
+    <Content Include="Scripts\Common\bootstrap.min.js" />
     <Content Include="Scripts\Common\errors.json" />
     <EntityDeploy Include="Models\TSEModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -2066,6 +2067,8 @@
     <Content Include="Scripts\Common\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\Common\knockout-2.2.0.js" />
     <Content Include="Scripts\Common\modernizr-2.6.2.js" />
+    <Content Include="Scripts\jquery\jquery.js" />
+    <Content Include="Scripts\jquery\jquery.min.js" />
     <Content Include="Scripts\TSE\controllers.js" />
     <Content Include="Scripts\TSE\factories.js" />
     <Content Include="Scripts\Common\_references.js" />
@@ -2085,6 +2088,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery\jquery.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

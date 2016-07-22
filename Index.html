@@ -11,7 +11,8 @@
     <script src="/Scripts/canvg/rgbcolor.js"></script>
     <script src="/Scripts/canvg/StackBlur.js"></script>
     <script src="/Scripts/canvg/canvg.js"></script>    
-    <script src="/Scripts/Common/jquery-1.8.2.min.js"></script>
+    <script src="/Scripts/jquery/jquery.min.js"></script>
+    <script src="/Scripts/Common/bootstrap.min.js"></script>
     <script src="/Scripts/canvg/jquery.adaptive-backgrounds.js"></script>
     <link type="text/css" rel="stylesheet" href="/CSS/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="/CSS/main.css" />
@@ -85,10 +86,13 @@
         }
 
         $('body').click(function (e) {
+            // is menu currently open
             if ($('#tse-container').hasClass('show-nav')) {
-                if (!$($(e)[0].srcElement).hasClass('fa-bars')) {
+                // is this the mobile menu icon? let it do its thing..
+                if (!$($(e)[0].toElement).hasClass('fa-bars')) {
+                    // they clicked out of the menu or a menu link
                     $('#tse-container').removeClass('show-nav');
                 }
-            }                                   
+            }                                                          
         });
 </script>
