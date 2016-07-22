@@ -88,8 +88,8 @@
         $('body').click(function (e) {
             // is menu currently open
             if ($('#tse-container').hasClass('show-nav')) {
-                // is this the mobile menu icon? let it do its thing..
-                if (!$($(e)[0].toElement).hasClass('fa-bars')) {
+                // is this the mobile menu icon? let it do its thing..                
+                if (!$($(e)[0].target).hasClass('fa-bars')) {
                     // they clicked out of the menu or a menu link
                     $('#tse-container').removeClass('show-nav');
                 }
