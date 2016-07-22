@@ -29,10 +29,10 @@
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/', {
                 templateUrl: '/templates/teams.html',
-                controller: 'TeamController'
+                controller: 'RivalController'
             }).when('/chooser', {
-                templateUrl: '/templates/chooser.html'//,
-                //controller: 'TeamController'
+                templateUrl: '/templates/chooser.html',
+                controller: 'TeamController'
             })
             .otherwise({
                 redirectTo: '/'

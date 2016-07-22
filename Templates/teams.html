@@ -6,7 +6,7 @@
     <img id="tempLogo" style="display:none" data-adaptive-background />
 </div>
 <div class="row bg-white">
-    <div ng-controller="TeamController" class="form-group">
+    <div ng-controller="RivalController" class="form-group">
         <select ng-options="option.Id as option.Name group by option.Division for option in teams"
                 ng-model="rival.Id"
                 ng-change="update();" class="form-control"></select>

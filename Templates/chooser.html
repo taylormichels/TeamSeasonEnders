@@ -5,5 +5,12 @@
             <li class="active"><a href="#" target="_self" data-toggle="pill">Eastern</a></li>
             <li><a href="#" target="_self" data-toggle="pill">Western</a></li>
         </ul>
-    </div>    
+
+        <div ng-controller="TeamController" class="form-group">
+            <select ng-options="option.Id as option.Name group by 
+                                option.Division for option in teams"
+                    ng-model="rival.Id"
+                    ng-change="update();" class="form-control"></select>
+        </div>    
+    </div>
 </div>
