@@ -13,4 +13,10 @@
                     ng-change="update();" class="form-control"></select>
         </div>    
     </div>
+    <div class="row">
+        <img class="img-responsive" id="topLogo" ng-src="{{ 'Rangers' | logoFormatter }}"
+             style="width: 30%; margin:0 auto; padding: 15px" />
+        <canvas id="canLogo" style="height:50px; display:none"></canvas>
+        <img id="tempLogo" style="display:none" data-adaptive-background />
+    </div>
 </div>
