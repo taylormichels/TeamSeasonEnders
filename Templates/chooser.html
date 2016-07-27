@@ -1,22 +1,22 @@
 ﻿
 <div class="container">
-    <div class="row">
-        <ul class="nav nav-pills nav-justified">
-            <li class="active"><a href="#" target="_self" data-toggle="pill">Eastern</a></li>
-            <li><a href="#" target="_self" data-toggle="pill">Western</a></li>
-        </ul>
-
-        <div ng-controller="TeamController" class="form-group">
+    <div ng-controller="TeamController" class="form-group">
+        <div class="row">
+            <ul class="nav nav-pills nav-justified">
+                <li class="active"><a href="#" target="_self" data-toggle="pill">Eastern</a></li>
+                <li><a href="#" target="_self" data-toggle="pill">Western</a></li>
+            </ul>
             <select ng-options="option.Id as option.Name group by
                                 option.Division for option in teams"
-                    ng-model="rival.Id"
-                    ng-change="update();" class="form-control"></select>
+                    ng-model="team.Id"
+                    class="form-control" my-change></select>
         </div>
-    </div>
-    <div class="row">
-        <img class="img-responsive" id="topLogo" ng-src="{{ 'Rangers' | logoFormatter }}"
-             style="width: 30%; margin:0 auto; padding: 15px" />
-        <canvas id="canLogo" style="height:50px; display:none"></canvas>
-        <img id="tempLogo" style="display:none" data-adaptive-background />
+        <div class="row">
+            <img class="img-responsive" id="topLogo" ng-src="{{ teamName | logoFormatter }}"
+                 style="width: 30%; margin:0 auto; padding: 15px" imageonload />
+            <canvas id="canLogo" style="height:50px; display:none"></canvas>
+            <img id="tempLogo" style="display:none" data-adaptive-background />
+            <h1 >{{ teamName }}</h1>
+        </div>
     </div>
 </div>

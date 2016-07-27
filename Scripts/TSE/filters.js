@@ -11,6 +11,8 @@
              case 'Bruins':
                  result = 'https://upload.wikimedia.org/wikipedia/en/1/12/Boston_Bruins.svg';
                  break;
+             default:
+                 result = 'https://upload.wikimedia.org/wikipedia/commons/3/33/Image-missing.svg';
          }         
          return result;
      }

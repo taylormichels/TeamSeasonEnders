@@ -2070,6 +2070,7 @@
     <Content Include="Scripts\jquery\jquery.js" />
     <Content Include="Scripts\jquery\jquery.min.js" />
     <Content Include="Scripts\TSE\controllers.js" />
+    <Content Include="Scripts\TSE\directives.js" />
     <Content Include="Scripts\TSE\factories.js" />
     <Content Include="Scripts\Common\_references.js" />
     <Content Include="Scripts\TSE\filters.js" />

@@ -8,6 +8,7 @@
     <script src="/Scripts/TSE/controllers.js"></script>
     <script src="/Scripts/TSE/factories.js"></script>
     <script src="/Scripts/TSE/filters.js"></script>    
+    <script src="/Scripts/TSE/directives.js"></script>    
     <script src="/Scripts/canvg/rgbcolor.js"></script>
     <script src="/Scripts/canvg/StackBlur.js"></script>
     <script src="/Scripts/canvg/canvg.js"></script>    
@@ -24,7 +25,8 @@
                 'ngRoute',
                 'factory.data',
                 'controllers.team',
-                'formatters.logo'
+                'formatters.logo',
+                'directives.imageonload'
         ])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/', {

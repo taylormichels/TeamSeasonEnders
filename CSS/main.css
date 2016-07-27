@@ -25,9 +25,10 @@ select.form-control {
 select option {
     padding: 6px;
 }
-.form-group {
+
+/*.form-group {
     background-color: #0161AB;
-}
+}*/
 
 .final {
     display: inline-block;
