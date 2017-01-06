@@ -33,15 +33,16 @@ namespace TeamSeasonEnders.API
         {
             using (TeamSeasonEndersEntities context = new TeamSeasonEndersEntities())
             {
-                var result = context.PlayoffResults.Where(r => r.TeamId == team
-                                                        && r.OpponentId == rival)
+                var result = context.PlayoffResults
+                                        .Where(r => r.TeamId == team && r.OpponentId == rival
+                                            || r.TeamId == rival && r.OpponentId == team)
                     .Select(r => new ResultModel
                     {
                         Name = r.Rival.Name,
                         Round = r.Round,
                         Year = r.Year,
-                        GamesWon = r.GamesWon,
-                        GamesLost = r.GamesLost
+                        GamesWon = r.TeamId == team ? r.GamesWon: r.GamesLost,
+                        GamesLost = r.TeamId == team ? r.GamesLost : r.GamesWon
                     });
 
                 return result.ToList();
