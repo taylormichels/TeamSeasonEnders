@@ -18,6 +18,8 @@
             element.bind('change', function () {                
                 scope.teamName =
                     element[0].options[element[0].selectedIndex].text;
+                scope.teamId =
+                    element[0].options[element[0].selectedIndex].value.replace('number:', '');
                 scope.$apply();                
             });
         }
