@@ -22,6 +22,8 @@
 
 .loss .final { color: red; }
 
+.list-group-item { font-size: 14px; }
+
 select.form-control {
     height: 45px;
     font-size: 18px;
@@ -29,10 +31,8 @@ select.form-control {
 }
 
 select.form-control.no-margin { margin: 0px; }
-
-select option {
-    padding: 6px;
-}
+select option { padding: 6px;}
+ul { list-style: none; }
 
 /*.form-group {
     background-color: #0161AB;
@@ -57,7 +57,12 @@ select option {
 
 .logo { height: 50px; }
 
+@media screen and (max-width: 768px) {
+    #topLogo { width: 50%; }
+}
+
 @media screen and (min-width: 768px) {
+    #topLogo { width: 30%; }
     .mobile-break {
         display: none;
     }

@@ -1,9 +1,11 @@
 ﻿
 <div class="row">
-    <img class="img-responsive" id="topLogo" ng-src="{{ teamName | logoFormatter }}"
-         style="width: 30%; margin:0 auto; padding: 15px" />
-    <canvas id="canLogo" style="height:50px; display:none"></canvas>
-    <img id="tempLogo" style="display:none" data-adaptive-background />
+    <a href="#/chooser">
+        <img class="img-responsive" id="topLogo" ng-src="{{ teamName | logoFormatter }}"
+             style="margin:0 auto; padding: 15px" />
+        <canvas id="canLogo" style="height:50px; display:none"></canvas>
+        <img id="tempLogo" style="display:none" data-adaptive-background />
+    </a>
 </div>
 <div class="row bg-white">
     <div ng-controller="RivalController" class="form-group">

@@ -64,8 +64,8 @@ a.toggle-nav:hover {
 #tse-menu li a {
     display: block;
     color: #fff;    
-    line-height: 1.28571em;    
     outline: none;
+    line-height: 1.28571em;  
 }
 
 
@@ -76,8 +76,14 @@ a.toggle-nav:hover {
         position: absolute;
         top: 0;
         left: -300px;
-        background: #428bca;
+        background: #0e5a93;
         padding: 15px;
+    }
+
+    #tse-menu li a {
+        font-size: 25px;
+        font-family: sans-serif;
+        line-height: inherit;  
     }
 
     .toggle-nav { display: inline-block; }
@@ -95,7 +101,7 @@ a.toggle-nav:hover {
     #tse-menu ul li {
         display: inline-block;
         font-size: 18px;
-    }
+    }    
 
     .toggle-nav { display: none; }
 }
