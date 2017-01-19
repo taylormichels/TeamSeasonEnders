@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TeamSeasonEnders.Models
+namespace TeamSeasonEnders.DB
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TeamSeasonEndersEntities : DbContext
+    public partial class TeamSeasonEndersContext : DbContext
     {
-        public TeamSeasonEndersEntities()
+        public TeamSeasonEndersContext()
             : base("name=TeamSeasonEndersEntities")
         {
         }

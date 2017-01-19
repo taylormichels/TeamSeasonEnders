@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TeamSeasonEnders.Models
+namespace TeamSeasonEnders.DB
 {
     using System;
     using System.Collections.Generic;

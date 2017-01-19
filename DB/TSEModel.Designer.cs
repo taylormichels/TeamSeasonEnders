@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\tmichels\Documents\Visual Studio 2013\Projects\TeamSeasonEnders\TeamSeasonEnders\Models\TSEModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\tmichels\OneDrive - GEP\GitHub\TeamSeasonEnders\DB\TSEModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
