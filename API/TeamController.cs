@@ -43,7 +43,7 @@ namespace TeamSeasonEnders.API
             return repository.GetPlayoffHistory(team, rival)
                     .Select(r => new ResultModel
                         {
-                            Name = r.Rival.Name,
+                            Name = r.Rival.Id == rival ? r.Rival.Name: r.Team.Name,                                                    
                             Round = r.Round,
                             Year = r.Year,
                             GamesWon = r.TeamId == team ? r.GamesWon: r.GamesLost,

@@ -49,5 +49,53 @@ namespace TeamSeasonEnders.Models
                 }
             }
         }
+
+        public int RoundByTitle(string title, int year)
+        {
+            // eh scrapping this for now theres too many name changes over the years
+            int result = 0;
+            switch (title)
+            {
+                case "Patrick Division semifinals":
+                case "Adams Division semifinals":
+                case "Norris Division semifinals":
+                case "Smythe Dvision semifinals":
+                case "preliminary round":
+                case "Eastern Conf. quarterfinals":
+                case "Western Conf. quarterfinals":
+                    result = 1;
+                    break;
+                
+                case "quartefinals":
+                    if (year > 1978)
+                        result = 2;
+                    else
+                        result = 1;
+                    break;
+                case "Patrick Division finals":
+                case "Norris Division finals":
+                    result = 2;
+                    break;
+
+                case "Wales Conference finals":
+                case "Campbell Conference finals":
+                case "Western Conf. finals":                
+                case "Eastern Conf. finals":                
+                case "semifinals":
+                    result = 3;
+                    break;
+                case "Eastern Conf, semifinals":
+                case "Western Conf. semifinals":
+                    if (year > 1992)
+                        result = 2;
+                    else
+                        result = 1;
+                    break;
+                case "Stanley Cup Finals":
+                    result = 4;
+                    break;                    
+            }
+            return result;
+        }
     }
 }

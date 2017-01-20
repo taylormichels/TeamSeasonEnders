@@ -4,9 +4,11 @@
          var result;
 
          switch (teamName) {
+             case "Red Wings":
+                 result = 'https://upload.wikimedia.org/wikipedia/en/e/e0/Detroit_Red_Wings_logo.svg';
+                 break;
              case 'Rangers':
-                 result = 'https://upload.wikimedia.org/wikipedia/commons/a/ae/New_York_Rangers.svg';
-                 //result = '/Images/RangersLogo.png';
+                 result = 'https://upload.wikimedia.org/wikipedia/commons/a/ae/New_York_Rangers.svg';                 
                  break;
              case 'Bruins':
                  result = 'https://upload.wikimedia.org/wikipedia/en/1/12/Boston_Bruins.svg';
