@@ -54,8 +54,10 @@ namespace TeamSeasonEnders.DataAccess
             if (context.PlayoffResults.FirstOrDefault(p => p.Year == result.Year && 
                     ((p.TeamId == result.TeamId && p.OpponentId == result.OpponentId) ||
                     (p.TeamId == result.OpponentId && p.OpponentId == result.TeamId))) == null)
-            context.PlayoffResults.Add(result);
-            context.SaveChanges();
+            {
+                context.PlayoffResults.Add(result);
+                context.SaveChanges();
+            }            
         }
     }
 
