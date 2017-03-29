@@ -1,13 +1,16 @@
 ﻿angular.module('controllers.team', [])
-  .controller('RivalController', ['$scope', '$rootScope', 'dataFactory', 'colorService',
-    function (scope, rootScope, data, color) {
-      scope.teams = [];      
+  .controller('RivalController', ['$scope', '$rootScope', 'dataFactory', 'colorService', '$location',
+    function (scope, rootScope, data, color, location) {
+      scope.teams = []; 
+      if (rootScope.homeTeam == undefined)
+          location.path('/chooser');
       scope.division = rootScope.homeTeam ? rootScope.homeTeam.Division : 'Eastern';
       scope.team = rootScope.homeTeam ? rootScope.homeTeam.Id : 0;
       scope.teamName = rootScope.homeTeam ? rootScope.homeTeam.Name : 'foo';
       scope.rival = '';
       scope.default = { 'Name': 'Select a Rival', 'Id': '0' };
       scope.results = [];
+      scope.selectionMade = false;
       var init = function () {
           data.getTeams(scope.division).success(function (result) {
               scope.teams = result;
@@ -19,7 +22,8 @@
       scope.update = function () {
           data.getResults(scope.team, scope.rival.Id).success(function (result) {
               scope.results = result;                  
-          });                    
+          });
+          scope.selectionMade = true;
       };
 
       init();

@@ -26,6 +26,11 @@
                     <span class="roundTitle" ng-bind-html="result.RoundTitle | mobileBreak"></span>
                 </div>
             </li>
-        </ul>
+            <li class="list-group-item loss" ng-if="results.length == 0 && selectionMade">
+                <div>
+                    <span style="font-style:italic">No results found</span>
+                </div>
+            </li>
+        </ul>                            
     </div>
 </div>

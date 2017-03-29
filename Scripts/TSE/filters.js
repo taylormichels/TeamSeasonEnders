@@ -13,6 +13,12 @@
              case 'Bruins':
                  result = 'https://upload.wikimedia.org/wikipedia/en/1/12/Boston_Bruins.svg';
                  break;
+             case 'Canadiens':
+                 result = 'https://upload.wikimedia.org/wikipedia/commons/6/69/Montreal_Canadiens.svg';
+                 break;
+             case 'Ducks':
+                 result = 'https://upload.wikimedia.org/wikipedia/en/7/72/Anaheim_Ducks.svg';
+                 break;
              default:
                  result = 'https://upload.wikimedia.org/wikipedia/commons/3/33/Image-missing.svg';
          }         
