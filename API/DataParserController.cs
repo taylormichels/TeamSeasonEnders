@@ -35,7 +35,8 @@ namespace TeamSeasonEnders.API
                 HtmlDocument doc = new HtmlWeb().Load(url.Value);
                 var pre = doc.DocumentNode.SelectNodes("//pre").FirstOrDefault();
                 var splits = Regex.Split(pre.InnerHtml, "\r\n|\r|\n");
-                int year, round, wins, losses = 0;
+                int year, round, wins, losses;
+                year = round = wins = losses = 0;
                 Team rival = null;
                 
                 foreach (var split in splits)
