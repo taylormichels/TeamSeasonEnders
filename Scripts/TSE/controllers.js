@@ -45,8 +45,8 @@
 
           // tab toggle logic
           $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {              
-              var target = $(e.target).text() // activated tab
-              getTeamsByDivision(target);              
+              scope.division = $(e.target).text() // activated tab              
+              getTeamsByDivision(scope.division);              
           });          
       }
 

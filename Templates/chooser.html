@@ -3,8 +3,12 @@
     <div ng-controller="TeamController" class="form-group">
         <div class="row">
             <ul class="nav nav-pills nav-justified">
-                <li class="active"><a href="#" target="_self" data-toggle="pill">Eastern</a></li>
-                <li><a href="#" target="_self" data-toggle="pill">Western</a></li>
+                <li ng-class="{ 'active' : division == 'Eastern' }">
+                    <a href="#" target="_self" data-toggle="pill">Eastern</a>
+                </li>
+                <li ng-class="{ 'active' : division == 'Western' }">
+                    <a href="#" target="_self" data-toggle="pill">Western</a>
+                </li>
             </ul>
             <select ng-options="option.Id as option.Name group by
                                 option.Division for option in teams"
