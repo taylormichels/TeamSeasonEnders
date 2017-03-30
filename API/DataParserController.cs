@@ -35,15 +35,16 @@ namespace TeamSeasonEnders.API
                 HtmlDocument doc = new HtmlWeb().Load(url.Value);
                 var pre = doc.DocumentNode.SelectNodes("//pre").FirstOrDefault();
                 var splits = Regex.Split(pre.InnerHtml, "\r\n|\r|\n");
+                splits = splits.Select(s => s.Replace("defeated defeated", "defeated")).ToArray(); //buggy data
                 int year, round, wins, losses;
                 year = round = wins = losses = 0;
                 Team rival = null;
                 
                 foreach (var split in splits)
-                {
+                {                    
                     PlayoffResult playoffResult = null;
                     // regex https://regex101.com/r/EgsknO/1
-                    var match = Regex.Match(split, "(\\d{4}) -- (defeated|lost to)\\s([a-zA-Z]*),\\s(\\d-\\d),\\s(.*)");
+                    var match = Regex.Match(split, "(\\d{4}) -- (defeated|lost to)\\s([a-zA-Z. ]*),\\s(\\d-\\d),\\s(.*)");
                     if (match.Success)
                     {
                         round = 1;
@@ -67,7 +68,7 @@ namespace TeamSeasonEnders.API
                     {
                         if (!string.IsNullOrEmpty(split))
                         {
-                            var nextMatch = Regex.Match(split, "(defeated|lost to)\\s([a-zA-Z]*),\\s(\\d-\\d),\\s(.*)");
+                            var nextMatch = Regex.Match(split, "(defeated|lost to)\\s([a-zA-Z. ]*),\\s(\\d-\\d),\\s(.*)");
                             if (nextMatch.Success)
                             {
                                 round++;
@@ -139,7 +140,8 @@ namespace TeamSeasonEnders.API
             { "Phoenix",  19},
             { "Minnesota", 29 },
             { "Florida", 5 },
-            { "Tampa Bay", 8 }
+            { "Tampa Bay", 8 },
+            { "New Jersey", 12 }
         };
     }
 }
