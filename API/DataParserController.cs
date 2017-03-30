@@ -49,7 +49,6 @@ namespace TeamSeasonEnders.API
                         round = 1;
                         year = int.Parse(match.Groups[1].Value);
                         rival = GetTeamByCity(match.Groups[3].Value);
-                        if (rival.Id == -1) continue;
                         var results = Array.ConvertAll(match.Groups[4].Value.Split('-'), int.Parse);
                         wins = match.Groups[2].Value == "defeated" ? results[0] : results[1];
                         losses = match.Groups[2].Value == "lost to" ? results[0] : results[1];
@@ -73,7 +72,6 @@ namespace TeamSeasonEnders.API
                             {
                                 round++;
                                 rival = GetTeamByCity(nextMatch.Groups[2].Value);
-                                if (rival.Id == -1) continue;
                                 var results = Array.ConvertAll(nextMatch.Groups[3].Value.Split('-'), int.Parse);
                                 wins = nextMatch.Groups[1].Value == "defeated" ? results[0] : results[1];
                                 losses = nextMatch.Groups[1].Value == "lost to" ? results[0] : results[1];
@@ -114,18 +112,25 @@ namespace TeamSeasonEnders.API
         public Dictionary<int, string> yahooUrls = new Dictionary<int, string>
         {
             {3, "http://sports.yahoo.com/nhl/news?slug=detroitpost" },
-            {13,  "https://sports.yahoo.com/nhl/news?slug=nyrangerspost" },
-            {1,  "http://sports.yahoo.com/nhl/news?slug=bostonpost" }
+            {14,  "https://sports.yahoo.com/nhl/news?slug=nyrangerspost" },
+            {1,  "http://sports.yahoo.com/nhl/news?slug=bostonpost" },
+            {2, "http://sports.yahoo.com/nhl/news?slug=buffalopost" },
+            {6, "http://sports.yahoo.com/nhl/news?slug=montrealpost" },
+            {7, "https://ca.sports.yahoo.com/nhl/news?slug=ottawapost" },
+            {8, "http://sports.yahoo.com/nhl/news?slug=tampabaypost" },
+            {10, "http://sports.yahoo.com/nhl/news?slug=carolinapost" },
+            {12, "http://sports.yahoo.com/nhl/news?slug=newjerseypost" },
+            {13, "http://sports.yahoo.com/nhl/news?slug=nyislnderspost" },
         };
 
         public Dictionary<string, int> teamLookup = new Dictionary<string, int>
         {
-            { "Quebec", -1 },
-            { "Atlanta", -1 },
-            { "N.Y. Americans", -1},
-            { "Montreal Maroons", -1 },
-            { "Hartford", -1 },
-            {"Montreal Wanderers", -1 },
+            { "Quebec", 38 },
+            { "Atlanta", 39 },
+            { "N.Y. Americans", 36},
+            { "Montreal Maroons", 34 },
+            { "Hartford", 35 },
+            {"Montreal Wanderers", 37 },
             { "N.Y. Islanders",  13},
             { "NY Islanders",  13},
             {  "N.Y. Rangers",  14},
@@ -133,8 +138,8 @@ namespace TeamSeasonEnders.API
             { "Colorado", 27 },
             { "Phoenix",  19},
             { "Minnesota", 29 },
-            { "Florida", 5 }
-
+            { "Florida", 5 },
+            { "Tampa Bay", 8 }
         };
     }
 }
