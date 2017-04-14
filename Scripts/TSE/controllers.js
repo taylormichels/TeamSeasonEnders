@@ -13,7 +13,7 @@
       scope.selectionMade = false;
       var init = function () {
           data.getTeams(scope.division).success(function (result) {
-              scope.teams = result;
+              scope.teams = result.filter(r => r.Id != scope.team);
               scope.teams.unshift(scope.default);
               scope.rival = scope.teams[0];              
           });
@@ -33,7 +33,7 @@
       scope.teams = [];                        
       scope.division = rootScope.homeTeam ? rootScope.homeTeam.Division : 'Eastern';      
       scope.teamName =  rootScope.homeTeam ? rootScope.homeTeam.Name:'foo';
-      scope.teamId = rootScope.homeTeam ? rootScope.homeTeam.Id : 0;
+      //scope.teamId = rootScope.homeTeam ? rootScope.homeTeam.Id : 0;
       scope.default = { 'Name': 'Select a Team', 'Id': '0' };      
       scope.results = [];
       scope.setTeam = function () {
@@ -54,9 +54,19 @@
           data.getTeams(division).success(function (result) {
               scope.teams = result;
               scope.teams.unshift(scope.default);
-              scope.team = scope.teams[0];              
+              if (!rootScope.homeTeam) {
+                  scope.team = scope.teams[0];
+              }
+              else {
+                  //scope.team = scope.teams.filter(t => t.Id == scope.teamId);
+                  //scope.teamId = scope.teams.filter(t => t.Id == scope.teamId).Id;
+                  scope.team = scope.teams.filter(t => t.Id == rootScope.homeTeam.Id);
+                  //scope.teamId = rootScope.homeTeam.Id;
+                  var index = scope.teams.indexOf(scope.team);
+                  scope.teamId = scope.teams[index];
+              }                                    
           });
       }
 
-      init();
+      init();      
 }]);   

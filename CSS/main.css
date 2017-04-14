@@ -7,7 +7,7 @@
     margin-left: 0px;
 }
 
-.bg-white {
+.container {
     width: 90%;
     margin: 0 auto;
 }
@@ -34,10 +34,6 @@ select.form-control.no-margin { margin: 0px; }
 select option { padding: 6px;}
 ul { list-style: none; }
 
-/*.form-group {
-    background-color: #0161AB;
-}*/
-
 .final {
     display: inline-block;
     width: 60px;
@@ -57,6 +53,8 @@ ul { list-style: none; }
 
 .logo { height: 50px; }
 
+.bg-white { background-color: #ffffff; }
+
 @media screen and (max-width: 768px) {
     #topLogo { width: 50%; }
 }
@@ -67,13 +65,6 @@ ul { list-style: none; }
         display: none;
     }
 }
-
-/*@media screen 
-and (device-width: 320px) {
-    .logo { height: 40px; }
-    .roundTitle { padding-left:10px; }
-}*/
-
 
 @media screen 
 and (max-width: 340px) {

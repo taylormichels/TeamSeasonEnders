@@ -20,8 +20,10 @@
                     ng-click="setTeam()">Accept and continue</button>
         </div>
         <div class="row">
-            <img class="img-responsive" id="topLogo" ng-src="{{ teamName | logoFormatter }}"
-                 style="margin:0 auto; padding: 15px" imageonload />
+            <img class="img-responsive" 
+                 ng-class="{ 'bg-white' : teamName == 'Lightning' || teamName == 'Maple Leafs'}" 
+                 id="topLogo" ng-src="{{ teamName | logoFormatter }}"
+                 style="margin:10px auto; padding: 15px" imageonload />
             <canvas id="canLogo" style="height:50px; display:none"></canvas>
             <img id="tempLogo" style="display:none" data-adaptive-background />
         </div>

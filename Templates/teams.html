@@ -1,13 +1,15 @@
 ﻿
 <div class="row">
     <a href="#/chooser">
-        <img class="img-responsive" id="topLogo" ng-src="{{ teamName | logoFormatter }}"
-             style="margin:0 auto; padding: 15px" />
+        <img class="img-responsive" 
+             ng-class="{ 'bg-white' : teamName == 'Lightning' || teamName == 'Maple Leafs'}"
+             id="topLogo" ng-src="{{ teamName | logoFormatter }}"
+             style="margin:10px auto; padding: 15px" />
         <canvas id="canLogo" style="height:50px; display:none"></canvas>
         <img id="tempLogo" style="display:none" data-adaptive-background />
     </a>
 </div>
-<div class="row bg-white">
+<div class="row container">
     <div ng-controller="RivalController" class="form-group">
         <select ng-options="option.Id as option.Name group by option.Division for option in teams"
                 ng-model="rival.Id"
