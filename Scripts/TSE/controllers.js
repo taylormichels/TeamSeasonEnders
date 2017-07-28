@@ -34,7 +34,8 @@
       scope.division = rootScope.homeTeam ? rootScope.homeTeam.Division : 'Eastern';      
       scope.teamName =  rootScope.homeTeam ? rootScope.homeTeam.Name:'foo';
       //scope.teamId = rootScope.homeTeam ? rootScope.homeTeam.Id : 0;
-      scope.default = { 'Name': 'Select a Team', 'Id': '0' };      
+      scope.default = { 'Name': 'Select a Team', 'Id': '0' };
+      scope.team = [{'Id':0,'Name':'','City':'','State':'','Division':'','Conference':''}];
       scope.results = [];
       scope.setTeam = function () {
           rootScope.homeTeam = { 'Name': scope.teamName, 'Id': scope.teamId, 'Division': scope.division };
@@ -54,17 +55,13 @@
           data.getTeams(division).success(function (result) {
               scope.teams = result;
               scope.teams.unshift(scope.default);
-              if (!rootScope.homeTeam) {
-                  scope.team = scope.teams[0];
-              }
-              else {
-                  //scope.team = scope.teams.filter(t => t.Id == scope.teamId);
-                  //scope.teamId = scope.teams.filter(t => t.Id == scope.teamId).Id;
-                  scope.team = scope.teams.filter(t => t.Id == rootScope.homeTeam.Id);
-                  //scope.teamId = rootScope.homeTeam.Id;
-                  var index = scope.teams.indexOf(scope.team);
-                  scope.teamId = scope.teams[index];
-              }                                    
+              if (!rootScope.homeTeam) 
+                  scope.team = scope.teams[0];                 
+              
+              else 
+                  scope.team =
+                      scope.teams.filter(t => t.Id == rootScope.homeTeam.Id)[0];
+                                                 
           });
       }
 
