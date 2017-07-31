@@ -12,17 +12,17 @@
             </ul>
             <select ng-options="option.Id as option.Name group by
                                 option.Division for option in teams"
-                    ng-model="team.Id"
-                    class="form-control" my-change></select>
+                    ng-model="selectedId" ng-change="selectTeam(selectedId)"
+                    class="form-control" ></select>
         </div>
         <div class="row">
             <button type="button" class="btn btn-primary" style="width:100%; font-size:18px"
                     ng-click="setTeam()">Accept and continue</button>
         </div>
         <div class="row">
-            <img class="img-responsive" 
-                 ng-class="{ 'bg-white' : teamName == 'Lightning' || teamName == 'Maple Leafs'}" 
-                 id="topLogo" ng-src="{{ teamName | logoFormatter }}"
+            <img class="img-responsive"
+                 ng-class="{ 'bg-white' : team.Name == 'Lightning' || team.Name == 'Maple Leafs'}"
+                 id="topLogo" ng-src="{{ team.Name | logoFormatter }}"
                  style="margin:10px auto; padding: 15px" imageonload />
             <canvas id="canLogo" style="height:50px; display:none"></canvas>
             <img id="tempLogo" style="display:none" data-adaptive-background />

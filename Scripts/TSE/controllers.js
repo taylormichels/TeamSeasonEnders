@@ -4,7 +4,7 @@
       scope.teams = []; 
       if (rootScope.homeTeam == undefined)
           location.path('/chooser');
-      scope.division = rootScope.homeTeam ? rootScope.homeTeam.Division : 'Eastern';
+      scope.division = rootScope.homeTeam ? rootScope.homeTeam.Conference: 'Eastern';
       scope.team = rootScope.homeTeam ? rootScope.homeTeam.Id : 0;
       scope.teamName = rootScope.homeTeam ? rootScope.homeTeam.Name : 'foo';
       scope.rival = '';
@@ -31,18 +31,37 @@
 .controller('TeamController', ['$scope', '$rootScope', 'dataFactory', 'colorService', '$location',
     function (scope, rootScope, data, color, location) {
       scope.teams = [];                        
-      scope.division = rootScope.homeTeam ? rootScope.homeTeam.Division : 'Eastern';      
+      scope.division = rootScope.homeTeam ? rootScope.homeTeam.Conference: 'Eastern';      
       scope.teamName =  rootScope.homeTeam ? rootScope.homeTeam.Name:'foo';
-      //scope.teamId = rootScope.homeTeam ? rootScope.homeTeam.Id : 0;
       scope.default = { 'Name': 'Select a Team', 'Id': '0' };
       scope.team = [{'Id':0,'Name':'','City':'','State':'','Division':'','Conference':''}];
       scope.results = [];
+      scope.selectedId = 0;
       scope.setTeam = function () {
-          rootScope.homeTeam = { 'Name': scope.teamName, 'Id': scope.teamId, 'Division': scope.division };
+          rootScope.homeTeam = scope.team;
           location.path('/');
       }
+
+      scope.selectTeam = function (id) {
+          scope.selectedId = id;
+          scope.team = scope.teams.filter(function (t) {
+              return t.Id == scope.selectedId;
+          })[0];
+      }
+
       var init = function () {          
-          getTeamsByDivision(scope.division);                    
+          getTeamsByDivision(scope.division).then(function (teams) {
+              if (!rootScope.homeTeam)
+                  scope.team = scope.teams[0];
+
+              else
+                  scope.team =
+                      scope.teams.filter(function(t) {
+                          return t.Id == rootScope.homeTeam.Id
+                      })[0];
+
+                  scope.selectedId = scope.team.Id;
+          });
 
           // tab toggle logic
           $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {              
@@ -51,17 +70,13 @@
           });          
       }
 
+      // TODO rename to Conference
       var getTeamsByDivision = function(division) {
-          data.getTeams(division).success(function (result) {
-              scope.teams = result;
-              scope.teams.unshift(scope.default);
-              if (!rootScope.homeTeam) 
-                  scope.team = scope.teams[0];                 
-              
-              else 
-                  scope.team =
-                      scope.teams.filter(t => t.Id == rootScope.homeTeam.Id)[0];
-                                                 
+          return data.getTeams(division).then(function (result) {
+              scope.teams = result.data;
+              scope.teams.unshift(scope.default);              
+              scope.selectedId = scope.default.Id;
+              scope.team = scope.teams[0];
           });
       }
 
